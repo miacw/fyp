@@ -28,6 +28,16 @@
   margin: 0 4px 0 auto;
 }
 
+.searchContainer button,
+.search button {
+  background-color: #c9a6af;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .search {
   position: relative;
   width: 100px;

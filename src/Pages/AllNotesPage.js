@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import NoteData from "../Components/NoteData";
+
 import Note from "../Components/Note";
-import NoteList from "../Components/NoteList";
-import NoteClass from "../Components/NoteClass";
+
 import Header from "../Components/Header";
-import { nanoid } from "nanoid";
-import ConfirmModal from "../Components/SystemFeedback/ConfirmModal";
+
 import SkeletonPage from "../Components/SystemFeedback/SkeletonPage";
 import LoadingSpinner from "../Components/SystemFeedback/LoadingSpinner";
 

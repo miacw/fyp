@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { nanoid } from "nanoid";
 import "./App.css";
-import NoteData from "./Components/NoteData";
-import Note from "./Components/Note";
+
 import AllNotesPage from "./Pages/AllNotesPage";
 import BurgerNav from "./Components/Navigation/BurgerNav";
 import Tab from "./Components/Navigation/Tab";
@@ -13,11 +12,9 @@ import FoldersPage from "./Pages/FoldersPage";
 import SearchPage from "./Pages/SearchPage";
 import AddNote from "./Pages/AddNote";
 import UserSettingsPage from "./Pages/UserSettingsPage";
-import SkeletonPage from "./Components/SystemFeedback/SkeletonPage";
 
 import ConfirmModal from "./Components/SystemFeedback/ConfirmModal";
 import ConfirmToast from "./Components/SystemFeedback/ConfirmToast";
-import Folder from "./Components/Folder";
 
 function App() {
   const [display, setDisplay] = useState("list");
@@ -61,8 +58,6 @@ function App() {
       text: "Lorem ipsu sed do eiusmod tempor ina aliqua. Ut eniquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
   ]);
-
-  const emptyNotes = [];
 
   const [searchPattern, setSearchPattern] = useState("Dynamic");
   const [searchText, setSearchText] = useState("");

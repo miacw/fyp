@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import "./NoteList.css";
 
 import { RiStickyNoteFill } from "react-icons/ri";
 import { AiTwotoneDelete } from "react-icons/ai";
-import FoldersData from "./FoldersData";
-import NoteData from "./NoteData";
 
 function Note({ layout, id, title, date, text, handleDeleteNote, dialog }) {
-  const handleChange = (text) => {
-    console.log(text);
-  };
-
   return (
     <div className={layout === "list" ? "ContainerList" : "ContainerGrid"}>
       <div className="NoteIcon">
