@@ -1,0 +1,104 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333333;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text h3 {
+  color: #ffffff;
+  margin: 4px 0;
+}
+
+.modalButtons {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.modalButtons button {
+  margin: 2px 4px;
+  border-radius: 5px;
+  padding: 4px 16px;
+  border: solid 2px #c9a6af;
+}
+
+.cancelBtn {
+  background-color: #ffffff;
+
+  color: black;
+}
+
+.confirmBtn {
+  background-color: #c9a6af;
+  color: black;
+}
+
+.toast {
+  background-color: #c9a6af;
+  width: 250px;
+  height: 95px;
+  padding: 4px 16px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  position: fixed;
+  top: 700px;
+  left: 65px;
+}
+
+.toast-hidden {
+  opacity: 0;
+  transition: all 250ms ease-out 3s;
+}
+.fade-in {
+  transition: opacity 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Spinner */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid black;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}

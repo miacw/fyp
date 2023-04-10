@@ -1,0 +1,15 @@
+.Main {
+  margin-top: 8px;
+
+  height: 100vh;
+}
+
+.MainGrid {
+  margin-top: 8px;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}

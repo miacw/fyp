@@ -1,0 +1,30 @@
+.Tabs {
+  width: 100vw;
+
+  background: #333333;
+}
+.tab-nav {
+  width: 85%;
+  margin: 0 auto 2rem;
+  background: #c9a6af;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #c9a6af;
+  border-radius: 4px;
+  list-style: none;
+  padding: 4px 16px;
+}
+
+.tab-nav li {
+  width: 50%;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-nav li.active {
+  background: #333333;
+  border-radius: 10px;
+}

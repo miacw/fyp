@@ -1,0 +1,129 @@
+.ContainerList {
+  display: flex;
+  background-color: #c9a6af;
+  border-radius: 10px;
+  margin: 0 4px 4px 4px;
+  height: 88px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.NoteIcon {
+  align-self: center;
+  padding: 0px 16px;
+}
+
+.NoteIcon span {
+  color: #333333;
+}
+
+.actionsList button {
+  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  background-color: #333333;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 18px;
+}
+
+.actionsList button:hover {
+  background-color: black;
+}
+
+.actionsList {
+  display: flex;
+  align-self: center;
+  padding: 0px 16px;
+}
+
+.InfoList {
+  text-align: start;
+  color: #ffffff;
+  flex: 1;
+  padding: 12px 0;
+}
+
+.InfoList h1 {
+  font-size: 14px;
+}
+
+.InfoList h2,
+.InfoList p {
+  font-size: 12px;
+}
+
+.InfoList p {
+  height: 32px;
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+
+/* css for grid layout */
+
+.ContainerGrid {
+  background-color: #c9a6af;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 275px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 12px 4px;
+}
+
+.InfoGrid {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.InfoGrid h2,
+.InfoGrid h1 {
+  color: white;
+  text-align: start;
+  padding: 0 16px;
+}
+
+.InfoGrid h1 {
+  font-size: 16px;
+}
+
+.InfoGrid h2 {
+  font-size: 12px;
+}
+
+.InfoGrid p {
+  text-align: start;
+  height: 150px;
+  background-color: white;
+  margin: 8px 16px;
+  padding: 4px;
+  /* display: grid;
+  align-content: space-between; */
+  overflow: hidden;
+}
+
+.reactIconHide {
+  display: none;
+}
+
+.actionsGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+}
+
+.actionsGrid button {
+  background-color: #333333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+.gridDelete {
+  /* align-self: flex-end;
+  justify-self: flex-end; */
+  padding: 0px;
+  display: inline-flex;
+}

@@ -1,0 +1,39 @@
+.holder {
+  background-color: #333333;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 1.5em 0.5em;
+}
+
+.searchContainer input {
+  border: none;
+  background-color: lightgray;
+}
+
+.searchContainer input:focus {
+  outline: none;
+}
+
+.scoped {
+  margin: 8px 0.5em;
+}
+
+.searchContainer button {
+  margin: 0 4px 0 auto;
+}
+
+.search {
+  position: relative;
+  width: 100px;
+  margin: 4px 0px 0px 12px;
+}
+
+.search button {
+  width: 100%;
+}

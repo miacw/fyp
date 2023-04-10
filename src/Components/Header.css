@@ -1,0 +1,10 @@
+.Header {
+  text-align: start;
+  margin: 0px 16px;
+  width: fit-content;
+  color: #c9a6af;
+}
+
+.Header h1 {
+  font-size: 48px;
+}
