@@ -46,7 +46,7 @@ const ScopedSearch = ({
             handleLoad();
             handleScopedSearch(dropdownText);
             handleClick();
-            handleSearchNote(searchInput);
+            handleSearchNote(searchInput.toLowerCase());
           }}
         >
           Search

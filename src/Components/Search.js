@@ -24,7 +24,7 @@ const Search = ({
             setTimeout(() => {
               handleLoad();
               handleScopedSearch("Title");
-              handleSearchNote(event.target.value);
+              handleSearchNote(event.target.value.toLowerCase());
             }, 500);
             handleSearchResult("returned");
           } else {
