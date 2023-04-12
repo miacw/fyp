@@ -6,7 +6,7 @@ const ElementMarker = (props) => {
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
+    if (event.nativeEvent.key === "Enter") {
       props.handleBlur();
     }
   };
@@ -20,6 +20,7 @@ const ElementMarker = (props) => {
           onChange={props.handleChange}
           onBlur={props.handleBlur}
           onKeyDown={handleKeyPress}
+          returnKeyType="return"
           autoFocus
           onFocus={handleFocus}
         ></input>
