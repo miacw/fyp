@@ -19,9 +19,9 @@ const ElementMarker = (props) => {
           value={props.value}
           onChange={props.handleChange}
           onBlur={props.handleBlur}
-          onKeyDown={handleKeyPress}
           returnKeyType="return"
-          autoFocus
+          onKeyDown={handleKeyPress}
+          //autoFocus
           onFocus={handleFocus}
         ></input>
       ) : (
