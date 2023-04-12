@@ -96,6 +96,19 @@ function App() {
     }
   };
 
+  const editNote = (id, item, value) => {
+    idNoteRef.current = id;
+    const noteToEdit = notes.filter((note) => note.id);
+    switch (item) {
+      case "title":
+        return (noteToEdit.title = value);
+      case "text":
+        return (noteToEdit.text = value);
+      default:
+        return noteToEdit;
+    }
+  };
+
   const [dialogType, setDialogType] = useState("modal");
 
   const handleDialogType = (type) => {

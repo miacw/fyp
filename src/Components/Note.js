@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NoteList.css";
+import ElementMarker from "./ElementMarker";
 
 import { RiStickyNoteFill } from "react-icons/ri";
 import { AiTwotoneDelete } from "react-icons/ai";
 
 function Note({ layout, id, title, date, text, handleDeleteNote, dialog }) {
+  const [showInput, setShowInput] = useState(false);
+  const [titleText, setTitleText] = useState(title);
   return (
     <div className={layout === "list" ? "ContainerList" : "ContainerGrid"}>
       <div className="NoteIcon">
@@ -17,7 +20,14 @@ function Note({ layout, id, title, date, text, handleDeleteNote, dialog }) {
       </div>
 
       <div className={layout === "list" ? "InfoList" : "InfoGrid"}>
-        <h1>{title}</h1>
+        <h1>
+          <ElementMarker
+            value={titleText}
+            handleChange={(e) => setTitleText(e.target.value)}
+            handleDoubleClick={() => setShowInput(true)}
+            showInput={showInput}
+          />
+        </h1>
         <h2>{date}</h2>
         {/* <div
           style={{
