@@ -5,6 +5,12 @@ const ElementMarker = (props) => {
     event.target.select();
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      props.handleBlur();
+    }
+  };
+
   return (
     <span className="input-span">
       {props.showInput ? (
@@ -13,7 +19,7 @@ const ElementMarker = (props) => {
           value={props.value}
           onChange={props.handleChange}
           onBlur={props.handleBlur}
-          onKeyDown={({ key }) => key === "Enter" && props.onBlur}
+          onKeyDown={handleKeyPress}
           autoFocus
           onFocus={handleFocus}
         ></input>
