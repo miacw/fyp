@@ -36,6 +36,7 @@ function AllNotesPage({
           {notes.map((note) => {
             return (
               <Note
+                note={note}
                 layout={layout}
                 id={note.id}
                 title={note.title}
