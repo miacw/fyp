@@ -13,6 +13,7 @@ const ElementMarker = (props) => {
           value={props.value}
           onChange={props.handleChange}
           onBlur={props.handleBlur}
+          onKeyDown={({ key }) => key === "Enter" && props.onBlur}
           autoFocus
           onFocus={handleFocus}
         ></input>
