@@ -12,6 +12,12 @@ export const BurgerNavData = [
     className: "nav-text",
   },
   {
+    title: "Compose",
+    path: "/compose",
+    icon: <BiMessageDetail />,
+    className: "nav-text",
+  },
+  {
     title: "Search",
     path: "/search",
     icon: <BiSearchAlt2 />,
@@ -27,12 +33,6 @@ export const BurgerNavData = [
     title: "Settings",
     path: "/user",
     icon: <AiOutlineUser />,
-    className: "nav-text",
-  },
-  {
-    title: "Compose",
-    path: "/compose",
-    icon: <BiMessageDetail />,
     className: "nav-text",
   },
 ];
