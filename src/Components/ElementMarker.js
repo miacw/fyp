@@ -9,8 +9,6 @@ const ElementMarker = (props) => {
     if (event.key === "Enter") {
       alert("Enter pressed");
       props.handleBlur();
-    } else {
-      alert("Not enter");
     }
   };
 
