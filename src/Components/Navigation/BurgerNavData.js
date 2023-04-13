@@ -24,7 +24,7 @@ export const BurgerNavData = [
     className: "nav-text",
   },
   {
-    title: "User",
+    title: "Settings",
     path: "/user",
     icon: <AiOutlineUser />,
     className: "nav-text",
