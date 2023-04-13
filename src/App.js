@@ -41,9 +41,9 @@ function App() {
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
-      title: "Coursework",
+      title: "Rhyme",
       date: "16/03/2023",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
+      text: "Here is an example of a riddle. ",
     },
     {
       id: nanoid(),
