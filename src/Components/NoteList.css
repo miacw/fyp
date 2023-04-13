@@ -24,6 +24,7 @@
   height: 32px;
   color: #ffffff;
   background-color: #333333;
+  -webkit-appearance: none;
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-size: 18px;
