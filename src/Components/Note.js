@@ -1,26 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./NoteList.css";
 import ElementMarker from "./ElementMarker";
 
 import { RiStickyNoteFill } from "react-icons/ri";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { render } from "@testing-library/react";
 
-function Note({ note, layout, id, title, date, text, handleDeleteNote }) {
+function Note({
+  note,
+  layout,
+  id,
+  title,
+  date,
+  text,
+  handleDeleteNote,
+  handleEditNote,
+}) {
+  const noteTitle = useRef();
+  noteTitle.current = title;
   const [showTitleInput, setShowTitleInput] = useState(false);
   const [showTextInput, setShowTextInput] = useState(false);
   const [titleText, setTitleText] = useState(title);
   const [textText, setTextText] = useState(text);
 
-  const handleEditNote = (note, item, value) => {
-    switch (item) {
-      case "title":
-        return (note.title = value);
-      case "text":
-        return (note.text = value);
-      default:
-        return note;
-    }
-  };
+  // const handleEditNote = (note, item, value) => {
+  //   switch (item) {
+  //     case "title":
+  //       return (note.title = value);
+  //     case "text":
+  //       return (note.text = value);
+  //     default:
+  //       return note;
+  //   }
+  // };
   return (
     <div className={layout === "list" ? "ContainerList" : "ContainerGrid"}>
       <div className="NoteIcon">
@@ -36,16 +48,20 @@ function Note({ note, layout, id, title, date, text, handleDeleteNote }) {
         <h1>
           <ElementMarker
             type="text"
-            value={titleText}
+            value={title}
             handleChange={(e) => setTitleText(e.target.value)}
             handleClick={() => setShowTitleInput(true)}
             showInput={showTitleInput}
             handleBlur={() => {
-              handleEditNote(note, "title", titleText);
+              handleEditNote(note, id, "title", titleText);
               setShowTitleInput(false);
             }}
           />
         </h1>
+        {/* <input
+          value={title}
+          onChange={(e) => setTitleText(e.target.value)}
+        ></input> */}
         <h2>{date}</h2>
         {/* <div
           style={{
@@ -63,12 +79,12 @@ function Note({ note, layout, id, title, date, text, handleDeleteNote }) {
         <p>
           <ElementMarker
             type="textarea"
-            value={textText}
+            value={text}
             handleChange={(e) => setTextText(e.target.value)}
             handleClick={() => setShowTextInput(true)}
             showInput={showTextInput}
             handleBlur={() => {
-              handleEditNote(note, "text", textText);
+              handleEditNote(note, id, "text", textText);
               setShowTextInput(false);
             }}
           />
@@ -82,7 +98,7 @@ function Note({ note, layout, id, title, date, text, handleDeleteNote }) {
         <AiTwotoneDelete
           size={32}
           onClick={() => {
-            handleDeleteNote(id);
+            handleDeleteNote(note, id);
           }}
         />
       </div>

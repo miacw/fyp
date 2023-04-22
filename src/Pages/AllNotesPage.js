@@ -13,6 +13,7 @@ function AllNotesPage({
   notes,
   layout,
   handleDeleteNote,
+  handleEditNote,
   handleDialog,
   loadPattern,
 }) {
@@ -43,6 +44,7 @@ function AllNotesPage({
                 date={note.date}
                 text={note.text}
                 handleDeleteNote={handleDeleteNote}
+                handleEditNote={handleEditNote}
               />
             );
           })}

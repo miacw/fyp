@@ -15,6 +15,7 @@ import UserSettingsPage from "./Pages/UserSettingsPage";
 
 import ConfirmModal from "./Components/SystemFeedback/ConfirmModal";
 import ConfirmToast from "./Components/SystemFeedback/ConfirmToast";
+import { render } from "@testing-library/react";
 
 function App() {
   const [display, setDisplay] = useState("list");
@@ -47,15 +48,15 @@ function App() {
     },
     {
       id: nanoid(),
-      title: "Hobbies",
-      date: "03/04/2023",
-      text: "trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-      id: nanoid(),
       title: "To Do",
       date: "22/01/2023",
       text: "Lorem ipsu sed do eiusmod tempor ina aliqua. Ut eniquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    },
+    {
+      id: nanoid(),
+      title: "Hobbies",
+      date: "03/04/2023",
+      text: "trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
   ]);
 
@@ -85,27 +86,46 @@ function App() {
 
   const idNoteRef = useRef();
 
-  const deleteNote = (id) => {
+  const deleteNote = (note, id) => {
+    console.log(note);
+    console.log(id);
     idNoteRef.current = id;
     if (dialogType === "modal") {
       handleDialog("Delete this note?", "modal", true);
     } else {
-      const newNotes = notes.filter((note) => note.id !== idNoteRef.current);
-      setNotes(newNotes);
+      const filteredNotes = notes.filter(
+        (note) => note.id !== idNoteRef.current
+      );
+
+      console.log(filteredNotes);
+
+      setNotes(filteredNotes);
       handleDialog("Note has been deleted", "toast", true);
     }
   };
 
-  const editNote = (id, item, value) => {
+  const editNote = (note, id, item, value) => {
     idNoteRef.current = id;
-    const noteToEdit = notes.filter((note) => note.id);
+    const noteToEdit = note;
+    let editedNoteArray = notes.filter((note) => note.id !== idNoteRef.current);
+    console.log(id);
+    console.log(noteToEdit);
+    console.log(editedNoteArray);
+
     switch (item) {
       case "title":
-        return (noteToEdit.title = value);
+        noteToEdit.title = value;
+        editedNoteArray = [noteToEdit, ...editedNoteArray];
+
+        return setNotes(editedNoteArray);
       case "text":
-        return (noteToEdit.text = value);
+        noteToEdit.text = value;
+        editedNoteArray = [noteToEdit, ...editedNoteArray];
+        console.log("updated note is " + { noteToEdit });
+        return setNotes(editedNoteArray);
       default:
-        return noteToEdit;
+        editedNoteArray = [noteToEdit, ...editedNoteArray];
+        return setNotes(editedNoteArray);
     }
   };
 
@@ -136,6 +156,7 @@ function App() {
   const areYouSureDelete = (choice) => {
     if (choice) {
       // creates a new array with all notes not including the note with the specified id
+      console.log(notes.filter((note) => note.id !== idNoteRef.current));
       const newNotes = notes.filter((note) => note.id !== idNoteRef.current);
       setNotes(newNotes);
       handleDialog("", false);
@@ -156,6 +177,7 @@ function App() {
                 notes={notes}
                 layout={display}
                 handleDeleteNote={deleteNote}
+                handleEditNote={editNote}
                 handleDialog={handleDialog}
                 loadPattern={loadPattern}
               />

@@ -16,7 +16,7 @@ const ElementMarker = (props) => {
       {props.showInput ? (
         <input
           type="text"
-          value={props.value}
+          placeholder={props.value}
           onChange={props.handleChange}
           onBlur={props.handleBlur}
           //returnKeyType="return"
