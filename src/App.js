@@ -58,6 +58,12 @@ function App() {
       date: "03/04/2023",
       text: "trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
+    {
+      id: nanoid(),
+      title: "Shopping List",
+      date: "11/01/2023",
+      text: "Eggs, milk, cheese.",
+    },
   ]);
 
   const [searchPattern, setSearchPattern] = useState("Dynamic");
