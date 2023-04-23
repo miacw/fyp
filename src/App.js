@@ -193,6 +193,7 @@ function App() {
                 handleScopedSearch={setScopedSearch}
                 loadPattern={loadPattern}
                 handleSearchResult={setSearchResult}
+                handleEditNote={editNote}
                 searchResult={searchResult}
                 notes={
                   searchResult !== "empty"

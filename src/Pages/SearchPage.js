@@ -16,6 +16,7 @@ function SearchPage({
   searchPattern,
   loadPattern,
   handleSearchResult,
+  handleEditNote,
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -60,6 +61,7 @@ function SearchPage({
                 date={note.date}
                 text={note.text}
                 handleDeleteNote={handleDeleteNote}
+                handleEditNote={handleEditNote}
               />
             );
           })}
