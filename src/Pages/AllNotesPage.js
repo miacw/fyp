@@ -28,7 +28,7 @@ function AllNotesPage({
   }, []);
 
   return (
-    <div>
+    <div style={{ height: "fit-content" }}>
       {loading &&
         (loadPattern === "Spinner" ? <LoadingSpinner /> : <SkeletonPage />)}
       <div className={loading ? "hidden" : null}>
