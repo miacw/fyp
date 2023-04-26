@@ -23,16 +23,6 @@ function Note({
   const [titleText, setTitleText] = useState(title);
   const [textText, setTextText] = useState(text);
 
-  // const handleEditNote = (note, item, value) => {
-  //   switch (item) {
-  //     case "title":
-  //       return (note.title = value);
-  //     case "text":
-  //       return (note.text = value);
-  //     default:
-  //       return note;
-  //   }
-  // };
   return (
     <div className={layout === "list" ? "ContainerList" : "ContainerGrid"}>
       <div className="NoteIcon">
@@ -58,24 +48,9 @@ function Note({
             }}
           />
         </h1>
-        {/* <input
-          value={title}
-          onChange={(e) => setTitleText(e.target.value)}
-        ></input> */}
+
         <h2>{date}</h2>
-        {/* <div
-          style={{
-            display: "grid",
-            alignContent: "space-between",
-          }}
-        > */}
-        {/* <span>
-          <AiTwotoneDelete
-            size={28}
-            onClick={() => handleDeleteNote(id)}
-            className="gridDelete"
-          />
-        </span> */}
+
         <p>
           <ElementMarker
             type="textarea"

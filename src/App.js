@@ -19,6 +19,9 @@ import { render } from "@testing-library/react";
 
 function App() {
   const [display, setDisplay] = useState("list");
+  const [searchPattern, setSearchPattern] = useState("Dynamic");
+  const [loadPattern, setLoadPattern] = useState("Spinner");
+  const [dialogType, setDialogType] = useState("modal");
 
   const handleDisplay = (display) => {
     setDisplay(display);
@@ -66,15 +69,9 @@ function App() {
     },
   ]);
 
-  const [searchPattern, setSearchPattern] = useState("Dynamic");
   const [searchText, setSearchText] = useState("");
   const [searchResult, setSearchResult] = useState("empty");
   const [scopedSearch, setScopedSearch] = useState("title");
-  const handleScopedSearch = (selection) => {
-    setScopedSearch(selection);
-  };
-
-  const [loadPattern, setLoadPattern] = useState("Spinner");
 
   const addNote = (title, text) => {
     console.log(title + " " + text);
@@ -114,9 +111,6 @@ function App() {
     idNoteRef.current = id;
     const noteToEdit = note;
     let editedNoteArray = notes.filter((note) => note.id !== idNoteRef.current);
-    console.log(id);
-    console.log(noteToEdit);
-    console.log(editedNoteArray);
 
     switch (item) {
       case "title":
@@ -134,8 +128,6 @@ function App() {
         return setNotes(editedNoteArray);
     }
   };
-
-  const [dialogType, setDialogType] = useState("modal");
 
   const handleDialogType = (type) => {
     setDialogType(type);

@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 
-const Dropdown = ({
-  menuTitle,
-
-  menuOptions,
-  handleFunction,
-}) => {
+const Dropdown = ({ menuTitle, menuOptions, handleFunction }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {

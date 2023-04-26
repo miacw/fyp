@@ -15,7 +15,6 @@ const UserSettingsPage = ({
   const handleOpen = () => {
     setOpen(!open);
   };
-  let target;
 
   return (
     <div className="settingsPage">
